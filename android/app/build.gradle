@@ -1,0 +1,38 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.unawa_home_page"
+    compileSdk = 34 // Make sure you are targeting the latest SDK
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11 // Update to Java 11
+        targetCompatibility = JavaVersion.VERSION_11 // Update to Java 11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11 // Update to Java 11
+    }
+
+    defaultConfig {
+        applicationId = "com.example.unawa_home_page"
+        minSdk = 23 // Updated minSdkVersion to 23
+        targetSdk = 34 // Directly set targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
